@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --surface: 240 6% 8%;
+    --surface-elevated: 240 5% 11%;
+    --border: 240 5% 18%;
+    --border-strong: 240 5% 26%;
+    --foreground: 0 0% 98%;
+    --muted: 240 5% 14%;
+    --muted-foreground: 240 4% 60%;
+    --accent: 217 91% 67%;
+    --accent-foreground: 0 0% 100%;
+    --accent-soft: 217 91% 67%;
+    --success: 158 64% 52%;
+    --warning: 45 93% 55%;
+    --danger: 0 84% 68%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/[0.08] bg-surface/70 backdrop-blur-xl;
+  }
+}
